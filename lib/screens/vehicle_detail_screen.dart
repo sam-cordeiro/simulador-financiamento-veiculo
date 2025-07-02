@@ -119,20 +119,12 @@ class _VehicleDetailScreenState extends State<VehicleDetailScreen> {
                     // Imagem do veículo
                     Center(
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(12),
                         child: Image.network(
-                          '/placeholder.svg?height=200&width=300',
+                          imagemUrl,
                           height: 200,
-                          width: 300,
+                          width: double.infinity,
                           fit: BoxFit.cover,
-                          errorBuilder: (context, error, stackTrace) {
-                            return Container(
-                              height: 200,
-                              width: 300,
-                              color: Colors.grey[300],
-                              child: const Icon(Icons.car_rental, size: 80),
-                            );
-                          },
                         ),
                       ),
                     ),

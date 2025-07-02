@@ -213,7 +213,17 @@ class HomeScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   // Demonstra polimorfismo: diferentes tipos de veículos
                   // são tratados de forma uniforme através da classe base
-                  return veiculos[index];
+                  return Card(
+                    elevation: 4,
+                    margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: veiculos[index],
+                    ),
+                  );
                 },
               ),
             ),
