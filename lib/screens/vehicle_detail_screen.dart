@@ -5,12 +5,14 @@ import 'package:flutter/services.dart';
 class VehicleDetailScreen extends StatefulWidget {
   final String nome;
   final double preco;
+  final String imagemUrl;
   final Map<String, dynamic> propriedades;
 
   const VehicleDetailScreen({
     super.key,
     required this.nome,
     required this.preco,
+    required this.imagemUrl,
     required this.propriedades,
   });
 
@@ -119,20 +121,12 @@ class _VehicleDetailScreenState extends State<VehicleDetailScreen> {
                     // Imagem do veículo
                     Center(
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(12),
                         child: Image.network(
-                          '/placeholder.svg?height=200&width=300',
+                          widget.imagemUrl,
                           height: 200,
-                          width: 300,
+                          width: double.infinity,
                           fit: BoxFit.cover,
-                          errorBuilder: (context, error, stackTrace) {
-                            return Container(
-                              height: 200,
-                              width: 300,
-                              color: Colors.grey[300],
-                              child: const Icon(Icons.car_rental, size: 80),
-                            );
-                          },
                         ),
                       ),
                     ),
